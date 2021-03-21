@@ -14,7 +14,7 @@
           Let's chat
         </h1>
 
-        <form class="block" @submit.prevent="onSubmit">
+        <form class="block" @submit.prevent="addMessage">
           <div class="field">
             <label class="label">Message</label>
             <div class="control">
@@ -28,9 +28,13 @@
           </div>
         </form>
 
-        <article class="message" v-for="message in messages">
+        <article class="message" v-for="(message, index) in messages">
+          <div class="message-header">
+            <p>Somebody said</p>
+            <button class="delete" aria-label="delete" v-on:click="deleteMessage(index)"></button>
+          </div>
           <div class="message-body">
-            {{ message }}
+            <p>{{ message }}</p>
           </div>
         </article>
       </div>

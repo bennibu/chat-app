@@ -9,10 +9,14 @@ const app = Vue.createApp({
     }
   },
   methods: {
-    onSubmit() {
+    addMessage() {
       this.messages.push(this.inputMessage)
 
       this.inputMessage = ""
+    },
+    deleteMessage(id) {
+      this.messages.splice(id, 1)
+      return
     }
   }
 })
