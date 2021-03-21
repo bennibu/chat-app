@@ -15,6 +15,10 @@ const ChatApp = {
   },
   methods: {
     addMessage() {
+      if (this.inputMessage == "") {
+        alert("Please insert some text.")
+        return
+      }
       this.messages.unshift(this.inputMessage)
       localStorage.messages = JSON.stringify(this.messages)
 
