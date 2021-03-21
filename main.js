@@ -15,7 +15,7 @@ const app = Vue.createApp({
   },
   methods: {
     addMessage() {
-      this.messages.push(this.inputMessage)
+      this.messages.unshift(this.inputMessage)
       localStorage.messages = JSON.stringify(this.messages)
 
       this.inputMessage = ""
