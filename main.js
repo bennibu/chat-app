@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+const ChatApp = {
   data() {
     return {
       inputMessage: "",
@@ -26,4 +26,6 @@ const app = Vue.createApp({
       return
     }
   }
-})
+}
+
+Vue.createApp(ChatApp).mount('#app')
