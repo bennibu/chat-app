@@ -14,19 +14,21 @@
           Let's chat
         </h1>
 
-        <div class="field">
-          <label class="label">Message</label>
-          <div class="control">
-            <input 
-              class="input"
-              type="text"
-              placeholder="Type in your message ..."
-              v-model="message"
-            >
+        <form class="block" @submit.prevent="onSubmit">
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <input 
+                class="input"
+                type="text"
+                placeholder="Type in your message ..."
+                v-model="inputMessage"
+              >
+            </div>
           </div>
-        </div>
+        </form>
 
-        <article class="message">
+        <article class="message" v-for="message in messages">
           <div class="message-body">
             {{ message }}
           </div>
